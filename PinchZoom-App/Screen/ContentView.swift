@@ -85,6 +85,59 @@ struct ContentView: View {
 					.padding(.top, 30)
 				, alignment: .top
 			)
+			// MARK: -  CONTROLS
+			.overlay(
+				Group {
+					HStack {
+						// MARK: -  SCALE DOWN
+						Button {
+							withAnimation(.spring()) {
+								// 1보다 imageScale 이 클때, 클릭시 iamgeScale 이 1씩 감소 : Main Action
+								if imageScale > 1 {
+									imageScale -= 1
+									
+									// Main Action 에서 1과 같거나 작을 경우에는 다시 reset 시킴: Safety Precaution
+									if imageScale <= 1 {
+										resetImageState()
+									}
+								}
+							}
+						} label: {
+							ControlImageView(icon: "minus.magnifyingglass")
+						}
+						// MARK: -  RESET
+						Button {
+							// 누르면 바로 resetImage 가 되게 함
+							resetImageState()
+						} label: {
+							ControlImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+						}
+						
+						// MARK: -  SCALE UP
+						Button {
+							withAnimation(.spring()) {
+								// imageScale 5보다 작을 경우 1씩 증가: Main Action
+								if imageScale < 5 {
+									imageScale += 1
+									
+									// imageScale 이 5보다 커지면 더이상 커지지 안게 5로 고정 시킴 : Safety precaution
+									if imageScale > 5 {
+										imageScale = 5
+									}
+								}
+							}
+						} label: {
+							ControlImageView(icon: "plus.magnifyingglass")
+						}
+					} //: CONTROLS
+					.padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+					.background(.ultraThinMaterial)
+					.cornerRadius(12)
+					.opacity(isAnimating ? 1 : 0)
+				}
+					.padding(.bottom, 30)
+				, alignment: .bottom
+			)
 			
 		} //: NAVIGATION
 		.navigationViewStyle(.stack)
