@@ -70,6 +70,27 @@ struct ContentView: View {
 								}
 							}
 					)
+				// MARK: -  3. MAGNIFICATION
+					.gesture(
+						MagnificationGesture()
+						// 확대 되는 gesture 조건 설정
+							.onChanged { value in
+								withAnimation(.linear(duration: 1)) {
+									if imageScale >= 1 && imageScale <= 5 {
+										imageScale = value
+									} else if imageScale > 5 {
+										imageScale = 5
+									}
+								}
+							}
+							.onEnded { _ in
+								if imageScale < 5 {
+									imageScale = 5
+								} else if imageScale  <= 1 {
+									resetImageState()
+								}
+							}
+					)
 			} //: ZSTACK
 			.navigationTitle("Pinch & Zoom")
 			.navigationBarTitleDisplayMode(.inline)
