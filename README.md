@@ -35,7 +35,7 @@
 
 <!-- ! ppt UI structure -->
 
-![image](https://user-images.githubusercontent.com/28912774/148864627-4fb99ec5-eb06-47ce-ad47-84763b431c7e.png)
+![image](https://user-images.githubusercontent.com/28912774/148867512-fb08ca56-b50f-415d-943f-484ca141a0ee.png)
 
 ### 🔷 Model
 
