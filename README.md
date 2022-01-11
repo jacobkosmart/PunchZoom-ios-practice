@@ -2,7 +2,7 @@
 
 <!-- ! gif 스크린샷 -->
 
-<img width="300" alt="스크린샷" src="">
+<img width="300" alt="스크린샷" src="https://user-images.githubusercontent.com/28912774/148862322-e16fa78c-301f-4d80-922b-eab9470f4524.gif">
 
 ## 📌 기능 상세
 
@@ -35,28 +35,45 @@
 
 <!-- ! ppt UI structure -->
 
-![image]()
+![image](https://user-images.githubusercontent.com/28912774/148864627-4fb99ec5-eb06-47ce-ad47-84763b431c7e.png)
 
-<!--
 ### 🔷 Model
 
 ```swift
+//  PageModel.swift
 
-``` -->
+import Foundation
 
-#### 👉 [1.Double Tap Gesture]()
+// Swift Protocol : A protocol defines a blueprint of methods, properties, and
+// other requirements that suit a particular task or piece of functionality
+struct Page: Identifiable {
+	let id: Int // ID: Specifying the identified Item
+	let imageName: String
+}
 
-#### 👉 [2.Drag Gesture]()
+extension Page {
+	var thumbnailName: String {
+		// Concatenating Strings: String values can be added together (or concatenated)
+		// with the addition operator (+)
+		return "thumb-" + imageName
+	}
+}
 
-#### 👉 [3.Long Press Gesture]()
+```
 
-#### 👉 [4.Control Interface]()
+#### 👉 [1.Double Tap Gesture](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/1.DoubleTab.md)
 
-#### 👉 [5.Magnification Gesture]()
+#### 👉 [2.Drag Gesture](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/2.DragGesture.md)
 
-#### 👉 [6.User Interface]()
+#### 👉 [3.Long Press Gesture](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/3.LongPressGesture.md)
 
-#### 👉 [7.Page Thumbnails]()
+#### 👉 [4.Control Interface](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/4.ControlInterface.md)
+
+#### 👉 [5.Magnification Gesture](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/5.MagnificationGesture.md)
+
+#### 👉 [6.User Interface](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/6.DrawerUI.md)
+
+#### 👉 [7.Page Thumbnails](https://github.com/jacobkosmart/PunchZoom-ios-practice/blob/main/MD/7.PageThumbnails.md)
 
 <!-- #### 👉 -->
 
@@ -90,5 +107,7 @@
 🔶 🔷 📌 🔑 👉
 
 ## 🗃 Reference
+
+How to use gestures in SwiftUI - [https://www.hackingwithswift.com/books/ios-swiftui/how-to-use-gestures-in-swiftui](https://www.hackingwithswift.com/books/ios-swiftui/how-to-use-gestures-in-swiftui)
 
 Udemy SwiftUI Masterclass 2022 - [https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/](https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/)
