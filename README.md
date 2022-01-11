@@ -44,40 +44,6 @@
 
 ``` -->
 
-### 🔷 Magnification Gesture
-
-- User 가 손가락 2개로 길에 늘리면 화면이 확대되는 기능을 구현합니다
-
-```swift
-// MARK: -  3. MAGNIFICATION
-.gesture(
-MagnificationGesture()
-// 확대 되는 gesture 조건 설정
-.onChanged { value in
-withAnimation(.linear(duration: 1)) {
-  if imageScale >= 1 && imageScale <= 5 {
-    imageScale = value
-  } else if imageScale > 5 {
-    imageScale = 5
-  }
-}
-}
-.onEnded { _ in
-if imageScale < 5 {
-  imageScale = 5
-} else if imageScale  <= 1 {
-  resetImageState()
-}
-}
-)
-```
-
-<img width="300" alt="스크린샷" src="https://user-images.githubusercontent.com/28912774/148847496-032fbd87-4440-43ff-9862-a6f1d761a5f2.gif">
-
-### 🔷 User Interface
-
-### 🔷 Page Thumbnails
-
 #### 👉 [1.Double Tap Gesture]()
 
 #### 👉 [2.Drag Gesture]()
